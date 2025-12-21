@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Manul.at</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            400: '#a8a29e',
+                            600: '#57534e',
+                            900: '#1c1917',
+                        },
+                        orange: {
+                            600: '#ea580c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-stone-50 text-stone-900 antialiased; }
+        }
+        .nav-scrolled { @apply bg-white/80 backdrop-blur-lg py-4 border-b border-stone-200 shadow-sm !important; }
+        .animate-reveal { animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <header id="navbar" class="fixed w-full z-50 top-0 px-6 py-8 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl md:text-3xl font-serif font-black tracking-tighter uppercase group">
+                Manul<span class="text-orange-600">.</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-x-10"> 
+                <nav class="flex items-center gap-x-8">
+                    <a href="index.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Home</a>
+                    <a href="rezepte.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Rezepte</a>
+                    <a href="journal.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Journal</a>
+                    <a href="uebermich.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Über Mich</a>
+                </nav>
+                <a href="kontakt.html" class="bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest px-8 py-3 hover:bg-orange-600 transition-all shadow-lg transform hover:-translate-y-0.5">
+                    Anfrage
+                </a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-40 md:pt-56 pb-32 animate-reveal">
+        <div class="max-w-4xl mx-auto px-6">
+            <header class="mb-24">
+                <span class="text-orange-600 font-black text-[10px] uppercase tracking-[0.5em] mb-4 block">Rechtliche Angaben</span>
+                <h1 class="text-6xl md:text-8xl font-serif font-bold tracking-tighter leading-none text-stone-900">
+                    Impressum<span class="text-orange-600">.</span>
+                </h1>
+            </header>
+
+            <div class="grid md:grid-cols-2 gap-16 border-t border-stone-200 pt-16">
+                <section>
+                    <h2 class="text-[10px] font-black text-stone-400 mb-8 uppercase tracking-[0.5em]">Angaben gemäß § 5 TMG</h2>
+                    <div class="space-y-2">
+                        <p class="text-stone-400 font-bold uppercase tracking-widest text-[10px]">Unternehmensbezeichnung</p>
+                        <p class="text-2xl md:text-3xl font-serif font-bold text-stone-900 leading-tight mb-8">
+                            Manul Kulinarik<br>
+                            Lukas Manul<br>
+                            Kaiser-Josef-Platz 1<br>
+                            8010 Graz, Österreich
+                        </p>
+                    </div>
+                </section>
+
+                <section class="space-y-16">
+                    <div>
+                        <h2 class="text-[10px] font-black text-stone-400 mb-6 uppercase tracking-[0.5em]">Kontakt</h2>
+                        <p class="text-xl md:text-2xl font-serif italic text-stone-800 leading-relaxed">
+                            Telefon: <a href="tel:+4367762409910" class="hover:text-orange-600 transition-colors">+43 677 624 099 10</a><br>
+                            E-Mail: <a href="mailto:be@manul.at" class="hover:text-orange-600 transition-colors">be@manul.at</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[10px] font-black text-stone-400 mb-6 uppercase tracking-[0.5em]">Inhaltlich Verantwortlich</h2>
+                        <p class="text-stone-900 font-bold uppercase tracking-[0.2em] text-xs">
+                            Lukas Manul<br>
+                            <span class="text-stone-400 font-medium">Anschrift wie oben</span>
+                        </p>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="mt-32 pt-12 border-t border-stone-100 italic text-stone-400 leading-relaxed text-sm max-w-2xl">
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                <a href="https://ec.europa.eu/consumers/odr/" class="text-stone-900 font-bold hover:text-orange-600 underline decoration-stone-200 underline-offset-4" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.
+                Unsere E-Mail-Adresse finden Sie oben im Impressum.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-stone-200 pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-20 mb-24">
+                <div class="md:col-span-6">
+                    <h2 class="text-5xl font-serif font-black uppercase mb-10 tracking-tighter text-stone-900">Manul<span class="text-orange-600">.</span></h2>
+                    <p class="text-stone-400 text-xl font-light italic max-w-md leading-relaxed mb-12">
+                        Kulinarisches Handwerk aus der Steiermark. Ihr Partner für exklusive Genussmomente.
+                    </p>
+                </div>
+                <div class="md:col-span-3">
+                    <h5 class="text-[11px] font-bold uppercase tracking-[0.4em] text-stone-900 mb-10">Rechtliches</h5>
+                    <ul class="space-y-6 text-stone-400 text-[11px] font-bold uppercase tracking-widest">
+                        <li><a href="impressum.html" class="text-black transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-black transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3 text-right">
+                    <a href="kontakt.html" class="inline-block bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest px-10 py-5 hover:bg-orange-600 transition-all shadow-lg">
+                        Projekt anfragen
+                    </a>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-stone-100 flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.4em] text-stone-300">
+                <p>© 2025 Manul.at</p>
+                <p>Handcrafted in Styria</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effekt
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('nav-scrolled');
+            else nav.classList.remove('nav-scrolled');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt & Anfrage | Manul.at</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 400: '#a8a29e', 600: '#57534e', 900: '#1c1917' },
+                        orange: { 600: '#ea580c' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-white text-stone-900 antialiased overflow-x-hidden; }
+        }
+        .nav-scrolled { @apply bg-white/90 backdrop-blur-md py-4 border-b border-stone-200 shadow-sm !important; }
+        .input-field { @apply w-full bg-white border border-stone-200 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-orange-600/10 focus:border-orange-600 transition-all placeholder:text-stone-300; }
+        
+        /* Mobile Menu State */
+        #mobile-menu { @apply fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center transition-all duration-500 opacity-0 pointer-events-none translate-y-10; }
+        #mobile-menu.open { @apply opacity-100 pointer-events-auto translate-y-0; }
+
+        /* Animations */
+        .animate-reveal { animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes reveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .nav-link-active { @apply text-orange-600 !important; }
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class="fixed w-full z-50 top-0 px-6 py-8 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl md:text-3xl font-serif font-black tracking-tighter uppercase">
+                Manul<span class="text-orange-600">.</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-x-10"> 
+                <nav class="flex items-center gap-x-8">
+                    <a href="index.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Home</a>
+                    <a href="rezepte.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Rezepte</a>
+                    <a href="journal.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Journal</a>
+                    <a href="uebermich.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Über Mich</a>
+                </nav>
+                <a href="kontakt.html" class="bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest px-8 py-3 hover:bg-orange-600 transition-all shadow-lg transform hover:-translate-y-0.5">
+                    Anfrage
+                </a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-2xl z-[70] relative">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu">
+        <nav class="flex flex-col items-center gap-y-8 text-center">
+            <a href="index.html" class="text-4xl font-serif italic hover:text-orange-600 transition-colors">Home</a>
+            <a href="rezepte.html" class="text-4xl font-serif italic hover:text-orange-600 transition-colors">Rezepte</a>
+            <a href="journal.html" class="text-4xl font-serif italic hover:text-orange-600 transition-colors">Journal</a>
+            <a href="uebermich.html" class="text-4xl font-serif italic hover:text-orange-600 transition-colors">Über Mich</a>
+            <a href="kontakt.html" class="mt-4 bg-stone-900 text-white text-xs font-bold uppercase tracking-widest px-12 py-5">Jetzt Anfragen</a>
+        </nav>
+    </div>
+
+    <main class="pt-40 md:pt-56 pb-32 animate-reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-24 items-start">
+                
+                <div>
+                    <span class="text-orange-600 font-black text-[10px] uppercase tracking-[0.5em] mb-6 block">Get in touch</span>
+                    <h1 class="text-6xl md:text-8xl font-serif font-bold mb-12 leading-none tracking-tighter">
+                        Lassen Sie uns <br>
+                        <span class="italic text-orange-600 font-normal underline underline-offset-[16px] decoration-stone-100">planen.</span>
+                    </h1>
+                    <p class="text-2xl text-stone-500 font-light leading-relaxed mb-20 italic max-w-lg">
+                        "Jeder Anlass ist einzigartig. Ich freue mich darauf, gemeinsam mit Ihnen ein kulinarisches Erlebnis zu gestalten."
+                    </p>
+                    
+                    <div class="space-y-12">
+                        <div class="flex items-start gap-8">
+                            <div class="w-14 h-14 bg-stone-50 rounded-2xl flex items-center justify-center text-orange-600 flex-shrink-0 shadow-sm border border-stone-100">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2">Einsatzgebiet</h4>
+                                <p class="font-serif italic text-2xl text-stone-900">Graz & Steiermarkweit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-8 group">
+                            <div class="w-14 h-14 bg-stone-50 rounded-2xl flex items-center justify-center text-orange-600 flex-shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 border border-stone-100">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2">Direkter Kontakt</h4>
+                                <a href="mailto:be@manul.at" class="font-serif italic text-2xl text-stone-900 block hover:text-orange-600 transition-colors">be@manul.at</a>
+                                <a href="tel:+4367762409910" class="font-serif italic text-2xl text-stone-900 block mt-1 hover:text-orange-600 transition-colors">+43 677 624 099 10</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 p-8 md:p-16 rounded-[2.5rem] border border-stone-100 shadow-2xl shadow-stone-200/50">
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-3">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-stone-400 ml-1">Vollständiger Name</label>
+                                <input type="text" id="name" name="name" class="input-field" placeholder="Ihr Name" required>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-stone-400 ml-1">E-Mail Adresse</label>
+                                <input type="email" id="email" name="email" class="input-field" placeholder="be@manul.at" required>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-stone-400 ml-1">Art der Anfrage</label>
+                            <div class="relative">
+                                <select id="anfrage" name="anfrage" class="input-field appearance-none cursor-pointer" required>
+                                    <option value="">Bitte wählen Sie eine Option</option>
+                                    <option value="Private Dining">Private Dining (Home-Service)</option>
+                                    <option value="Kochkurs">Exklusiver Kochkurs</option>
+                                    <option value="Catering">Business Lunch / Catering</option>
+                                    <option value="Sonstige">Sonstige Nachricht</option>
+                                </select>
+                                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-stone-400">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-stone-400 ml-1">Ihre Nachricht</label>
+                            <textarea id="message" name="message" rows="5" class="input-field resize-none" placeholder="Teilen Sie mir Ihre Wünsche mit..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-stone-900 text-white py-6 rounded-2xl font-bold uppercase tracking-[0.3em] text-[11px] hover:bg-orange-600 transition-all shadow-xl hover:-translate-y-1">
+                            Anfrage unverbindlich senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-stone-200 pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-12 gap-20 mb-24">
+                <div class="md:col-span-8">
+                    <h2 class="text-5xl font-serif font-black uppercase mb-10 tracking-tighter text-stone-900">Manul<span class="text-orange-600">.</span></h2>
+                    <p class="text-stone-400 text-xl font-light italic max-w-md leading-relaxed mx-auto md:mx-0">
+                        Kulinarisches Handwerk aus der Steiermark. Ihr Partner für exklusive Genussmomente.
+                    </p>
+                </div>
+                <div class="md:col-span-4">
+                    <h5 class="text-[11px] font-bold uppercase tracking-[0.4em] text-stone-900 mb-10">Rechtliches</h5>
+                    <ul class="space-y-6 text-stone-400 text-[11px] font-bold uppercase tracking-widest">
+                        <li><a href="impressum.html" class="hover:text-black transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-black transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.4em] text-stone-300 gap-4">
+                <p>© <span id="current-year">2025</span> Manul.at</p>
+                <p>Handcrafted in Styria</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

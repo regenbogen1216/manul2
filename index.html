@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manul.at | Culinary Blog & Private Chef</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        orange: {
+                            600: '#ea580c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-stone-50 text-stone-900 antialiased selection:bg-orange-100 selection:text-orange-600; }
+        }
+
+        .nav-scrolled {
+            @apply bg-white/80 backdrop-blur-lg py-4 border-b border-stone-200 shadow-sm !important;
+        }
+
+        .mobile-menu {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(-100%);
+        }
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+        
+        .animate-reveal {
+            animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <header id="navbar" class="fixed w-full z-50 top-0 px-6 py-8 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl md:text-3xl font-serif font-black tracking-tighter uppercase group">
+                Manul<span class="text-orange-600 group-hover:animate-pulse">.</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-x-10"> 
+                <nav class="flex items-center gap-x-8">
+                    <a href="index.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-black">Home</a>
+                    <a href="rezepte.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Rezepte</a>
+                    <a href="journal.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Journal</a>
+                    <a href="uebermich.html" class="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 hover:text-orange-600 transition-colors">Über Mich</a>
+                </nav>
+                
+                <a href="kontakt.html" class="bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest px-8 py-3 hover:bg-orange-600 transition-all shadow-lg hover:-translate-y-0.5 transform">
+                    Anfrage
+                </a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-2xl focus:outline-none z-50">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-stone-50 z-40 flex flex-col items-center justify-center space-y-8 p-12 text-center">
+            <a href="index.html" class="text-2xl font-serif italic text-stone-800">Home</a>
+            <a href="rezepte.html" class="text-2xl font-serif italic text-stone-800">Rezepte</a>
+            <a href="journal.html" class="text-2xl font-serif italic text-stone-800">Journal</a>
+            <a href="uebermich.html" class="text-2xl font-serif italic text-stone-800">Über Mich</a>
+            <a href="kontakt.html" class="bg-black text-white text-xs font-bold uppercase tracking-widest px-10 py-5 w-full">
+                Anfrage Senden
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-32 md:pt-44 animate-reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="grid lg:grid-cols-12 gap-16 border-b border-stone-200 pb-24">
+                
+                <div class="lg:col-span-8 lg:border-r lg:border-stone-200 lg:pr-16">
+                    <article class="group cursor-pointer">
+                        <span class="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em] mb-6 block">Saisonale Empfehlung</span>
+                        <h1 class="text-5xl md:text-8xl font-serif font-bold leading-[0.9] tracking-tighter mb-10 group-hover:italic transition-all duration-700">
+                            Die Forelle <br>aus dem <span class="text-stone-300">Ennstal.</span>
+                        </h1>
+                        
+                        <div class="overflow-hidden rounded-sm mb-10 shadow-2xl">
+                            <img 
+                                src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=1200" 
+                                alt="Feature Food" 
+                                class="w-full h-[70vh] object-cover transition-transform duration-[2s] group-hover:scale-105"
+                            >
+                        </div>
+
+                        <div class="grid md:grid-cols-12 gap-10">
+                            <div class="md:col-span-4 italic text-stone-400 text-base font-serif border-t border-stone-200 pt-6">
+                                "Ein ehrlicher Blick auf die Schätze unserer Gewässer. Zubereitet mit Respekt vor dem Produkt."
+                            </div>
+                            <div class="md:col-span-8 text-stone-600 text-lg leading-relaxed font-light">
+                                <p class="mb-8">
+                                    In einer Zeit der überladenen Rezepte besinnen wir uns zurück auf das Wesentliche. Die Ennstaler Forelle benötigt nicht viel: Ein wenig Steinsalz, frische Kräuter vom Grazer Bauernmarkt und das unverkennbare Aroma von steirischem Kernöl.
+                                </p>
+                                <a href="rezepte.html" class="inline-block text-[11px] font-bold uppercase tracking-widest border-b-2 border-orange-600 pb-1 hover:text-orange-600 transition-colors">
+                                    Vollständiges Rezept lesen
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="lg:col-span-4 space-y-20">
+                    <div>
+                        <h4 class="text-[11px] font-bold uppercase tracking-widest border-b border-stone-900 pb-3 mb-10 text-stone-900">Journal Highlights</h4>
+                        <div class="space-y-12">
+                            <a href="#" class="flex gap-6 group">
+                                <div class="w-24 h-24 shrink-0 overflow-hidden bg-stone-200">
+                                    <img src="https://images.unsplash.com/photo-1594385208974-2e75f9d8ad48?auto=format&fit=crop&q=80&w=300" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div>
+                                    <span class="text-[9px] font-bold text-orange-600 uppercase tracking-widest block mb-2">Technik</span>
+                                    <h5 class="font-serif font-bold text-xl leading-tight group-hover:text-orange-600 transition-colors">Das Messer-Geheimnis</h5>
+                                </div>
+                            </a>
+                            <a href="#" class="flex gap-6 group">
+                                <div class="w-24 h-24 shrink-0 overflow-hidden bg-stone-200">
+                                    <img src="https://images.unsplash.com/photo-1488459711635-0c002897481d?auto=format&fit=crop&q=80&w=300" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div>
+                                    <span class="text-[9px] font-bold text-orange-600 uppercase tracking-widest block mb-2">Region</span>
+                                    <h5 class="font-serif font-bold text-xl leading-tight group-hover:text-orange-600 transition-colors">Marktbericht: Kaiser-Josef</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-900 text-white p-12 rounded-sm relative overflow-hidden group shadow-2xl">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-600/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000"></div>
+                        <div class="relative z-10">
+                            <h4 class="text-[10px] font-bold uppercase tracking-[0.4em] mb-6 text-orange-500">Privatkoch Service</h4>
+                            <h3 class="text-3xl font-serif font-bold mb-6 italic leading-tight">Exklusives <br>Dining in Graz.</h3>
+                            <p class="text-stone-400 text-sm font-light mb-10 leading-relaxed italic">
+                                "Holen Sie sich das Restauranterlebnis in Ihre eigenen vier Wände."
+                            </p>
+                            <a href="kontakt.html" class="block text-center bg-white text-black py-5 text-[10px] font-bold uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all transform active:scale-95">
+                                Termin Anfragen
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <section class="py-32">
+                <div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-6">
+                    <h2 class="text-5xl md:text-7xl font-serif font-bold italic tracking-tighter text-stone-900">Aus dem Archiv</h2>
+                    <div class="h-px bg-stone-200 flex-grow mx-12 hidden md:block"></div>
+                    <a href="rezepte.html" class="text-[11px] font-bold uppercase tracking-widest text-stone-400 hover:text-orange-600 transition-colors border-b border-transparent hover:border-orange-600">Alle Rezepte</a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <a href="rezepte.html" class="group">
+                        <div class="aspect-[4/5] overflow-hidden mb-8 bg-stone-100 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 grayscale-[0.2] group-hover:grayscale-0">
+                        </div>
+                        <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-3">Tradition</span>
+                        <h4 class="text-2xl font-serif font-bold group-hover:text-orange-600 transition-colors leading-tight">Steirisches Wurzelfleisch</h4>
+                    </a>
+                    <a href="rezepte.html" class="group">
+                        <div class="aspect-[4/5] overflow-hidden mb-8 bg-stone-100 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 grayscale-[0.2] group-hover:grayscale-0">
+                        </div>
+                        <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-3">Dessert</span>
+                        <h4 class="text-2xl font-serif font-bold group-hover:text-orange-600 transition-colors leading-tight">Kürbis-Crème-Brûlée</h4>
+                    </a>
+                    <a href="rezepte.html" class="group">
+                        <div class="aspect-[4/5] overflow-hidden mb-8 bg-stone-100 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 grayscale-[0.2] group-hover:grayscale-0">
+                        </div>
+                        <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-3">Hauptgang</span>
+                        <h4 class="text-2xl font-serif font-bold group-hover:text-orange-600 transition-colors leading-tight">Zander auf Beluga</h4>
+                    </a>
+                    <a href="rezepte.html" class="group">
+                        <div class="aspect-[4/5] overflow-hidden mb-8 bg-stone-100 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 grayscale-[0.2] group-hover:grayscale-0">
+                        </div>
+                        <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-3">Saisonal</span>
+                        <h4 class="text-2xl font-serif font-bold group-hover:text-orange-600 transition-colors leading-tight">Hausgemachte Schupfnudeln</h4>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-stone-200 pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-20 mb-24">
+                <div class="md:col-span-6">
+                    <h2 class="text-6xl font-serif font-black uppercase mb-10 tracking-tighter">Manul<span class="text-orange-600">.</span></h2>
+                    <p class="text-stone-400 text-xl font-light leading-relaxed max-w-md italic mb-12">
+                        Kulinarisches Handwerk aus der Steiermark. Ihr Partner für exklusive Genussmomente.
+                    </p>
+                    <div class="space-y-6 text-stone-800 text-[11px] font-bold uppercase tracking-[0.2em]">
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-envelope text-orange-600 w-5"></i> 
+                            <a href="mailto:be@manul.at" class="hover:text-orange-600 transition-colors underline decoration-stone-200 underline-offset-4">be@manul.at</a>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-phone text-orange-600 w-5"></i> 
+                            <a href="tel:+4367762409910" class="hover:text-orange-600 transition-colors underline decoration-stone-200 underline-offset-4">+43 677 624 099 10</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <h5 class="text-[11px] font-bold uppercase tracking-[0.4em] text-stone-900 mb-10">Navigation</h5>
+                    <ul class="space-y-6 text-stone-400 text-[11px] font-bold uppercase tracking-widest">
+                        <li><a href="index.html" class="hover:text-black transition-colors">Home</a></li>
+                        <li><a href="rezepte.html" class="hover:text-black transition-colors">Rezepte</a></li>
+                        <li><a href="journal.html" class="hover:text-black transition-colors">Journal</a></li>
+                        <li><a href="uebermich.html" class="hover:text-black transition-colors">Über Mich</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h5 class="text-[11px] font-bold uppercase tracking-[0.4em] text-stone-900 mb-10">Social</h5>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-14 h-14 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 hover:text-white hover:bg-stone-900 transition-all duration-500">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-14 h-14 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 hover:text-white hover:bg-stone-900 transition-all duration-500">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-stone-100 flex flex-col md:flex-row justify-between text-[10px] font-bold uppercase tracking-[0.4em] text-stone-300">
+                <p>© 2025 Manul.at — Handcrafted in Styria</p>
+                <div class="mt-4 md:mt-0 flex gap-8">
+                    <a href="impressum.html" class="hover:text-stone-600 transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-stone-600 transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effekt
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            const icon = btn.querySelector('i');
+            icon.classList.toggle('fa-bars-staggered');
+            icon.classList.toggle('fa-xmark');
+        });
+    </script>
+</body>
+</html>
