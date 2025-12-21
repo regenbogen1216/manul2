@@ -1,0 +1,100 @@
+/* 1. GRUNDLEGENDE SCHRIFTEN & RESET */
+:root {
+    --manul-orange: #ea580c; /* Tailwind orange-600 */
+    --manul-stone: #f8f5f3;  /* Der helle Hintergrund */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* 2. NAVIGATION OPTIMIERUNGEN */
+#navbar {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effekt für aktive Links */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--manul-orange);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* 3. MOBILE MENU LOGIK */
+/* Diese Klassen werden via JS getoggled */
+#mobile-menu {
+    z-index: 40;
+    /* Verhindert Flackern beim Laden */
+    visibility: hidden; 
+}
+
+#mobile-menu:not(.opacity-0) {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* 4. TYPOGRAFIE DETAILS (Für "Über Mich") */
+/* Die große Initiale (Dropcap) */
+.prose p::first-letter {
+    float: left;
+    font-size: 5rem;
+    line-height: 0.8;
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    color: #1c1917; /* stone-900 */
+}
+
+/* 5. ANIMATIONEN */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* 6. BILD-EFFEKTE */
+.grayscale-hover {
+    filter: grayscale(100%);
+    transition: filter 1s ease, transform 1s ease;
+}
+
+.grayscale-hover:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* 7. FORMULAR STYLES (Falls benötigt für Kontakt) */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--manul-orange) !important;
+    ring: 0 !important;
+}
+
+/* Verhindert horizontales Scrollen bei Animationen */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
